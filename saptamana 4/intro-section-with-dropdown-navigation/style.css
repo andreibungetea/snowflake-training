@@ -1,0 +1,300 @@
+* {
+    margin: 0px;
+    font-family: "Epilogue";
+    padding: 0px;
+}
+
+:root {
+    --almost-white: hsl(0, 0%, 98%);
+    --medium-gray: hsl(0, 0%, 41%);
+    --almost-black: hsl(0, 0%, 8%);
+}
+
+.title-container {
+    font-weight: 700;
+    font-size: 62px;
+}
+
+
+/*  -- buton chenar plin -- */
+.button-contained {
+    background-color: var(--almost-black);
+    color: var(--almost-white);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    border: none;
+    border-radius: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+ 
+/* -- buton cu margine -- */
+.button-outlined {
+    background-color: transparent;
+    color: #173A56;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-width: 1px;
+    border-color: #bcd0bcE5;
+    border-style: solid;
+}
+
+/* -- buton fara margine -- */
+.button-text {
+    background-color: transparent;
+    color: #173A56;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-width: 1px;
+    border-color: #bcd0bcE5;
+    border-style: none;
+}
+
+/* --- Nav --- */
+nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-links-container {
+    display: none;
+    }
+
+@media (min-width: 1024px) {
+    nav {
+        gap: 62px;
+    }
+
+    .nav-logo {
+        flex-direction: 0px;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .navbar-links-container {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        align-items: center;
+    }
+
+    .navbar-links {
+        display: flex;
+        list-style: none;
+        gap: 24px;
+    }
+
+    .button-container {
+        display: flex;
+        gap: 36px;
+    }
+
+    .navbar-links-container li {
+        padding: 16px;
+        position: relative;
+        cursor: pointer;
+    }
+       
+    .navbar-sublinks {
+        position: absolute;
+        left: -40px;
+        top: 40px;
+        box-shadow: 0px 4px 16px 2px rgba(0, 0, 0, 25%);
+        display: none;
+        list-style: none; 
+        padding: 12px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        line-height: 0px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    /* hover - este o pseudoclasa, care este un selector     */
+    .navbar-first-link:hover .navbar-sublinks {
+        display: block;
+    }
+
+    .button-text-login {
+        text-decoration: none;
+    }
+    .button-text {
+        cursor: pointer;
+    }
+
+    .button-outlined {
+        cursor: pointer;
+    }
+} 
+
+/* --- Header --- */
+.description-card-container {
+    padding: 24px;
+}
+
+.mobile-container img {
+    width: 100%;
+    /* max-height: 510px; */
+    /* margin-bottom: 36px; */
+}
+
+.description-card-container h1 {
+    text-align: center;
+    margin-bottom: 28px; 
+    /*pun mb mai mare pe h1 pt ca dc pun mb mai mic pe h1 si mt pe p,
+    va fi afisata val. cea mai mare */ 
+    font-size: 34px;
+}
+
+.description-card-container p {
+    text-align: center;
+    opacity: 80%;
+    line-height: 28px;
+    font-size: 16px;
+    font-weight: 400;
+    /* padding-left: 2px; */
+    /* padding-right: 2px; */
+    /* margin-top: 12px; */
+    margin-bottom: 32px;
+    max-width: 375px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+.button-contained {
+    display: flex;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 72px;
+    cursor: pointer;
+}
+    
+
+.client-link-container {
+    display: flex;
+    align-items: center;
+    /* width: 14px; */
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.mobile-container .client-link-container img  {
+    display: flex;
+    align-items: center;
+    /* padding-top: 66px; */
+    /* width: min-content; */
+    }
+
+.mobile-container .client-link-container .databiz {
+   width: 80px;
+}
+.mobile-container .client-link-container .audiophile {
+    width: 52px;
+}
+.mobile-container .client-link-container .meet {
+    width: 64px;
+}
+.mobile-container .client-link-container .maker {
+    width: 64px;
+}
+
+.desktop-image {
+    max-width: 480px;
+}
+
+@media (min-width: 600px) {
+    .client-link-container {
+        justify-content: center;
+        gap: 28px;
+    }
+    .mobile-container img {
+        display: flex;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mobile-container .desktop-image {
+        display: none;  
+    }
+}
+
+@media (min-width: 1024px) {
+    .mobile-container .mobile-image {
+       display: none;
+    }
+}
+   
+@media (min-width: 1024px) {
+    .mobile-container {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 56px;
+        padding-top: 40px;
+        padding-left: 156px;
+        padding-right: 100px;
+        padding-bottom: 56px;
+    }  
+    
+    .description-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .mobile-container h1 {
+        font-weight: 700;
+        font-size: 58px;
+        text-align: left;
+        padding-top: 100px;
+        padding-bottom: 36px;
+    }
+
+    .mobile-container p {
+        text-align: left;
+        margin-bottom: 48px;
+    }
+
+    .client-link-container {
+        gap: 32px;
+    }
+
+    .client-link-container img  {
+        display: flex;
+        /* padding-top: 66px; */
+        width: min-content;
+        }
+
+    .mobile-container .button-contained {
+        text-decoration: none;
+        }
+    }
+

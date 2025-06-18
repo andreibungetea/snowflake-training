@@ -1,0 +1,64 @@
+* {
+    padding: 0px;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 0px;
+}
+
+.tooltip-marker {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    display: none;
+    position: absolute;
+    bottom: -28px;
+    left: -12px;
+    background-color: rgb(235, 219, 243);
+    color: brown;
+    border-radius: 8px;
+    padding: 4px 8px;
+    /* in loc de pl+pr:4px si pt+pb:8px, am scris padding: 4px 8px; */
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 100;
+}
+
+.tooltip-marker:hover .tooltip-text {
+    display: inline;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+}
+
+/* state-ul active este activ incepand cu apasarea click-ului si se incheie
+odata cu eliberarea click-ului. Acelasi lucru se intampla si cu touch-ul */
+/* .tooltip-marker:active {
+    background-color: red;
+} */
+
+/* state-ul focus este activ incepand cu apasarea click-ului si se incheie oriunde
+dai click pe un alt element / oriunde in afar primului element . 
+Acelasi lucru se intampla si cu touch-ul.
+By default, in state-ul focus pot fi introduse doar o serie anume
+de elemente de html: input, buttom etc. Daca un element nu face parte din lista, poate fi 
+introdus in lista folodind tabindex */
+.tooltip-marker:focus .tooltip-text {
+    display: inline;
+}
+
+.tooltip-pointer {
+    display: none;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    bottom: -28px;
+    left: -12px;
+    background-color: rgb(235, 219, 243);
+    transform: rotate(45deg);
+}
+
+.tooltip-marker:hover .tooltip-pointer {
+    display: block;
+}

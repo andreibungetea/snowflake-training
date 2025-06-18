@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+}
+.avatar-container {
+   display: flex;
+    /* oy */
+    align-items: center;
+    /* ox */
+    justify-content: flex-start;
+
+    /* distanta intre elemente */
+    gap: 12px;
+}
