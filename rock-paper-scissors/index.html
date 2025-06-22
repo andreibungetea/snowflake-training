@@ -21,38 +21,51 @@
         <p class="player-score">0</p>
       </div>
     </div>
-    <!-- Player options -->
-    <div class="player-options-container">
-      <div class="upper-buttons">
-        <button class="paper-button" value="paper">
-          <img src="./assets/paper.svg" class="player-options-img" />
+
+    <div class="desktop-container">
+      <!-- Player options -->
+      <div class="player-options-container">
+        <div class="upper-buttons">
+          <button class="paper-button" value="paper">
+            <img src="./assets/paper.svg" class="player-options-img" />
+          </button>
+          <button class="scissors-button" value="scissors">
+            <img src="./assets/scissors.svg" class="player-options-img" />
+          </button>
+        </div>
+        <button class="rock-button" value="rock">
+          <img src="./assets/rock.svg" class="player-options-img" />
         </button>
-        <button class="scissors-button" value="scissors">
-          <img src="./assets/scissors.svg" class="player-options-img" />
-        </button>
+        <img src="./assets/triangle.svg" class="player-option-triangle" />
       </div>
-      <button class="rock-button" value="rock">
-        <img src="./assets/rock.svg" class="player-options-img" />
-      </button>
-      <img src="./assets/triangle.svg" class="player-option-triangle" />
+
+      <!-- Final result -->
+      <div class="final-result-container hide">
+        <div class="choise-container">
+          <img src="" class="selected-option-image" />
+          <h3>You Picked</h3>
+        </div>
+        <div class="final-result">
+          <h3 class="final-result-text hide"></h3>
+          <button class="reset-button">PLAY AGAIN</button>
+        </div>
+        <div class="choise-container">
+          <img src="" class="house-option-image" />
+          <h3>THE HOUSE PICKED</h3>
+        </div>
+      </div>
     </div>
 
-    <!-- Final result -->
-    <div class="final-result-container hide">
-      <div>
-        <h3>You Picked</h3>
-        <img src="" class="selected-option-image" />
-      </div>
-      <div>
-        <h3 class="final-result-text"></h3>
-        <button class="reset-button">PLAY AGAIN</button>
-      </div>
-      <div>
-        <h3>THE HOUSE PICKED</h3>
-        <img src="" class="house-option-image" />
+    <!-- Rules button -->
+    <div class="modal">
+      <div class="rules-close-container">
+        <h2>RULES</h2>
+        <img src="./assets/rules.svg" class="rules-image" />
+        <img src="./assets/icon-close.svg" class="close-image" />
       </div>
     </div>
     <button class="rules-button">RULES</button>
+
     <script src="./handle-player-options.js"></script>
     <script src="./handle-final-result.js"></script>
     <script src="./reset-game.js"></script>

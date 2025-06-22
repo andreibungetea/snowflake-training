@@ -30,18 +30,33 @@ const moveToFinalResult = () => {
 };
 
 const updateFinalResult = () => {
-    // selectedOptionImage.setAttribute("src", `./assets/${selectedOption}.svg`);
-
+    
     selectedOptionImage.setAttribute("src", `./assets/${selectedOption}.svg`);
 
-    // const randomIndex = Math.floor(Math.random() * 3); //alegerea aleatorie a unui nr si max din care poate alege. Min 0, max2
-    // const houseOption = options[randomIndex]; //afisam in consola indexul si pe ce pozitie sta acesta
-    // houseOptionImage.setAttribute("src", `./assets/${houseOption}.svg`);
-
     const randomIndex = Math.floor(Math.random() * 3);
-  const houseOption = options[randomIndex];
-  houseOptionImage.setAttribute("src", `./assets/${houseOption}.svg`);
+    const houseOption = options[randomIndex];
+    houseOptionImage.setAttribute("src", `./assets/${houseOption}.svg`);
 
     const finalResult = getFinalResult(selectedOption, houseOption);
     finalResultText.innerText = finalResult;  
 };
+
+// ---------- Rules ----------
+const rulesButton = document.querySelector(".rules-button");
+const modal = document.querySelector(".modal");
+const modalRules = document.querySelector(".modal-rules");
+const closeImage = document.querySelector(".close-image");
+
+
+
+const handleRulesButtonModal = () => {
+    modal.classList.remove("hide");
+};
+
+rulesButton.addEventListener("click", handleRulesButtonModal);
+
+const handleResetImageClose = () => {
+    modal.classList.add("hide");
+}
+
+closeImage.addEventListener("click", handleResetImageClose);

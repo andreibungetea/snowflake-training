@@ -11,6 +11,7 @@ const handelDisplayPlanetOverview = () => {
     // adauga clasa selected-tab pe noul buton selectat
     planetOverviewButton.classList.add("selected-tab");
 };
+
 planetOverviewButton.addEventListener("click", handelDisplayPlanetOverview);
 
 const handelDisplayPlanetStructure = () => {
@@ -20,10 +21,9 @@ const handelDisplayPlanetStructure = () => {
     planetStructureButton.classList.add("selected-tab");
 
     // modificam imaginea. modificam sursa
-    const planetImage = () => {
-        planetImage.setAttribute("src", planetData.images.internal);
-    };
-
+    const planetImage = document.querySelector(".planet-image");
+    planetImage.setAttribute("src", planetData.images.internal);
+    
 
     // modificam paragraful
     const planetDescription = document.querySelector(".planet-description");
@@ -37,9 +37,24 @@ const handelDisplayPlanetStructure = () => {
 planetStructureButton.addEventListener("click", handelDisplayPlanetStructure);
 
 const handleDisplayPlanetSurface = () => {
-    const currentlySelectedTab = document.querySelector("selected-tab");
+
+    const currentlySelectedTab = document.querySelector(".selected-tab");
     currentlySelectedTab.classList.remove("selected-tab");
     planetSurfaceButton.classList.add("selected-tab");
+
+    // modificam imaginea. modificam sursa
+    const planetImage = document.querySelector(".planet-image");
+    planetImage.setAttribute("src", planetImage.images.planet);
+
+    // modificam paragraful
+    const planetDescription = document.querySelector(".planet-description");
+    planetDescription.innerText = planetDescription.overview.content;
+
+    // modificam link-ul
+    const planetDescriptionSource = document.querySelector(".planet-descripiton-source");
+    planetDescriptionSource.setAttribute("src", planet.overview.source);
+
+
 };
 
 planetSurfaceButton.addEventListener("click", handleDisplayPlanetSurface);

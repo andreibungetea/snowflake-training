@@ -16,28 +16,28 @@ const getPlanetData = async () => {
     );
     console.log(planetData);
 
-    generateSection();
+    // generateSection();
+
     
-   
+    const generateSection = () => {
+          const planetSection = document.createElement("section"); // <section></section>
+          planetSection.innerHTML = `
+            <img src="${planetData.images.planet}" class="planet-image" />
+            <h1>${planetData.name}</h1>
+            <p class="planet-description">${planetData.overview.content}</p>
+            <div>
+              <span>Source: </span>
+              <a href="${planetData.overview.source}" class="planet-descripiton-source" target="_blank">
+                Wikipedia
+                <img src="./assets/icon-source.svg" />
+              </a>
+            </div>
+          `;
+          document.body.appendChild(planetSection); //apelam functia
+    };
 };
 
-const generateSection = () => {
-    // cream continut de html in js
-     const planetSection = document.createElement("section"); //<section></section>
-    planetSection.innerHTML = `
-    <img src="${planetData.images.planet}" class="planet-image" /> //adaugam img in int section-ului din html
-    <h1>${planetData.name}</h1>
-    <p class="planet-description">${planetData.overview.content}</p>
-    <div> 
-    <span>Source :</span>
-    <a href="${planetData.overview.source}" class="planet-description-source" target=_blank>
-    Wikipedia
-    <img src="./assets/icon-source.svg" />
-    </a>
-    </div>
-    `
-    document.body.appendChild(planetSection); // il adaugam in pagina sa il vedem
-};
+
 
 getPlanetData();
 

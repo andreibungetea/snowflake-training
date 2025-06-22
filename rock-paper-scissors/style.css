@@ -31,12 +31,6 @@ body {
     display: none !important;
 }
 
-.button:hover {
-    display: inline;
-    transition-duration: 0.25s;
-    transition-timing-function: ease-out;
-}
-
 /* Upper section */
 .header {
     display: flex;
@@ -83,12 +77,14 @@ body {
 
 /* Player option */
 .player-options-container {
-    margin-bottom: 140px;
+    width: 312px;
+    height: 282px;
 }
 
-.player-options-container button{
+.player-options-container button {
     background: transparent;
     border-style: none;
+    cursor: pointer;
 }
 
 .player-options-img {
@@ -100,6 +96,12 @@ body {
     margin-right: auto;
     position: relative;
     z-index: 1;
+}
+
+.choise-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .upper-buttons {
@@ -125,8 +127,48 @@ body {
 .final-result-container {
     display: flex;
     gap: 48px;
+    align-items:center;
+    /* justify-content: space-between; */
+    max-width: 325px;
 }
 
+.reset-button {
+    background-color: white;
+    color: var(--dark-text);
+    width: 220px;
+    height: 48px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2.5px;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 59px;
+    cursor: pointer;
+}
+
+.final-result {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 330px;
+}
+
+.final-result-container .final-result-text {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.final-result-container h3 {
+    font-size: 15px;
+    color: white;
+}
+
+/* ----- Rules -------- */
 .rules-button {
     display: flex;
     margin-left: auto;
@@ -142,18 +184,146 @@ body {
     background: transparent;
     color: white;
     padding: 7px 40px; 
+    margin-top: 52px;
+    margin-bottom: 12px;
+    cursor: pointer;
 }
 
-.reset-button {
+/* --- Modal ------ */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
     background-color: white;
-    color: var(--dark-text);
-    width: 220px;
-    height: 48px;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 2.5px;
 }
 
+.modal-rules {
+    background-color: white;
+}
+
+.modal-rules h2 {
+    color: var(--dark-text);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 95px;
+}
+
+.rules-image {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: 60px; */
+    
+}
+
+.close-image {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: 30px; */
+    width: 20px;
+}
+
+ .rules-close-container {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+ }
+
+@media(min-width: 1024px) {
+    .body {
+        height: 768px;
+    }
+    .header {
+        max-width: 700px;
+        max-height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+    
+    .desktop-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .player-options-container {
+        max-width: 476px;
+        max-height: 430px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .player-option-triangle {
+        right: 430px;
+    }
+    
+    .rules-button {
+        margin-top: 160px;
+        margin-left: 830px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .modal {
+        position: fixed;
+        z-index: 1;
+        padding-top: 145px; /* Location of the box */
+        left: 0px;
+        top: 0px;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;        
+    }   
+
+    .modal-rules h2 {
+        text-align: center;
+        /* padding-left: 32px; */
+        /* padding-top: 32px; */
+    }
+
+    .rules-image  {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        /* width: 80%; */
+        width: 400px;
+        height: 415px;
+    }
+   
+    :fullscreen {
+    .close-image {
+            float: right;
+        }
+    }
+
+    .close-image,
+    .close-image:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+    .close-image {
+        /* display: flex; */
+        /* margin-right: 10px; */
+        margin-top: -480px;
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        width: 20px;
+    }
+}   
 
 
  
