@@ -22,7 +22,7 @@ const handleSelectTip = (e) => {
 // mai mereu acea functie o cream inline si este anonima.
 tipButtons.forEach((tipButton) => {
   tipButton.addEventListener("click", handleSelectTip);
-}); ``
+}); 
 
 // ------------------ Calculator Form ------------------
 const form = document.querySelector(".calculator-form");
@@ -38,8 +38,7 @@ const handleSubmit = (e) => {
 
   let numberOfErros = 0;
 
-//   Bill
-
+//---- Bill ----
   // 1. Obtine numarul introdus de user in campul Bill
   const bill = Number(data.get("bill"));
 
@@ -124,7 +123,6 @@ const handelReset = () => {
     numberOfPeopleInput.value = "";
     
     // Resetare paragrafuri
-
     billInputError.classList.add("hide");
     customTipInputError.classList.add("hide");
     numberOfErros.classList.add("hide");

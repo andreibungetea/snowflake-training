@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Very simple calculator</h1>
+      <form class="calculator-form">
+        <label for="first-number">First number</label>
+        <br />
+        <input type="number" id="first-number" name="first-number" />
+        <p
+          class="hide calculator-form-error first-number-error error-appearance"
+        >
+          This field is required
+        </p>
+        <br />
+        <label for="operator">Operator</label>
+        <br />
+        <select id="operator" name="operator">
+          <option value="">Select one</option>
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+        <p class="hide calculator-form-error operator-error error-appearance">
+          This field is requiered
+        </p>
+        <br />
+        <label for="second-number">Second-number</label>
+        <br />
+        <input type="number" id="second-number" name="second-number" />
+        <p
+          class="hide calculator-form-error second-number-error error-appearance"
+        >
+          This field is requiered
+        </p>
+        <br />
+        <button class="calculate-button">Calculate</button>
+      </form>
+      <!--linia de sub butonul calculate-->
+      <hr />
+      <br />
+      <p class="result-content">Result</p>
+      <p class="calculator-form-result">-</p>
+      <br />
+      <button class="reset-button">RESET</button>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>

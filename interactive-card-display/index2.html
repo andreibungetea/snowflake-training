@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <img
+      src="./assets/bg-main-mobile.png"
+      class="background-main-mobile-image"
+    />
+    <!-- Card back -->
+    <div class="card-back">
+      <img src="./assets/bg-card-back.png" class="card-back-image" />
+      <p>000</p>
+    </div>
+    <!-- Card front -->
+    <div class="card-front">
+      <img src="./assets/bg-card-front.png" class="card-front-image" />
+      <img src="./assets/card-logo.svg" class="card-front-logo" />
+      <p class="card-front-number">0000 0000 0000 0000</p>
+      <div class="name-data-container">
+        <p class="card-front-name">JANE APPLESEED</p>
+        <p>00/00</p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form class="card-form">
+      <div>
+        <label class="standard-label" for="cardholder-name"
+          >Cardholder-name</label
+        >
+        <input
+          class="standard-input"
+          type="text"
+          id="cardholder-name"
+          placeholder="e.g. Jane Appleseed"
+          name="cardholder-name"
+        />
+        <p class="hide cardholder-name-error input-error"></p>
+      </div>
+      <div>
+        <label class="standard-label" for="cardholder-number"
+          >Cardholder-number</label
+        >
+        <input
+          class="standard-input"
+          type="text"
+          id="cardholder-number"
+          placeholder="e.g. 1234 5678 9123 0000"
+          name="cardholder-number"
+        />
+        <p class="hide cardholder-number-error input-error"></p>
+      </div>
+      <!-- Expire date -->
+      <div class="general-expire-container">
+        <div class="expire-container">
+          <label class="standard-label" for="expire-date"
+            >Exp. date (MM / YY)</label
+          >
+          <input
+            class="standard-input"
+            type="text"
+            id="expire-date"
+            placeholder="MM"
+            name="expire-date"
+          />
+          <input
+            class="standard-input"
+            type="text"
+            id="month-year"
+            placeholder="YY"
+            name="month-year"
+          />
+        </div>
+        <!-- CVC -->
+        <div class="cvc-container">
+          <label class="standard-label" for="cvc">CVC</label>
+          <input
+            class="standard-input"
+            type="text"
+            id="cvc"
+            placeholder="e.g. 123"
+            name="cvc"
+          />
+        </div>
+      </div>
+      <button class="confirm-button">Confirm</button>
+    </form>
+    <script src="./script2.2.js"></script>
+  </body>
+</html>

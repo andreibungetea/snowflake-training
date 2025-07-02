@@ -1,0 +1,56 @@
+* {
+    padding: 0px;
+
+    margin: 0px;
+}
+.hide {
+    display: none !important; /*apare peste orice display*/
+}
+
+.error-appearance {
+    color: red;
+}
+
+body {
+    padding: 12px;
+}
+
+h1 {
+    margin-bottom: 24px;
+}
+
+form input {
+    margin-bottom: 18px;
+    border-radius: 4px;
+}
+
+form select {
+    margin-bottom: 18px;
+}
+
+.calculate-button {
+    width: 72px;
+    padding: 4px 8px;
+    background-color: maroon;
+    color: yellow;
+    border-radius: 4px;
+    border-style: none;
+}
+
+.result-content {
+    width: 56px;
+    padding: 4px 8px;
+    background-color: maroon;
+    border-radius: 4px;
+    color: yellow;
+    border-style: none;
+}
+
+.reset-button {
+     width: 72px;
+    padding: 4px 8px;
+    background-color: maroon;
+    border-radius: 4px;
+    color: yellow;
+    border-style: none;
+}

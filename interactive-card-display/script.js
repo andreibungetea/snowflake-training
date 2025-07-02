@@ -1,5 +1,5 @@
 const form = document.querySelector(".card-form");
-const seccondStepContainer = document.querySelector(".seccond-step-container");
+const secondStepContainer = document.querySelector(".second-step-container");
 const cardholderNameError = document.querySelector(".cardholder-name-error");
 
 const forbiddenCharacters = ["1", "2", "3"];
@@ -13,25 +13,19 @@ const handleSubmit = (e) => {
   const data = new FormData(e.target);
 
   // ---------- Cardholder name ----------
-if (cardholderIsValid === false || cardNumber)
+  const cardholderName = data.get("cardholder-name");
+  const cardholderNameIsValid = validateName(cardholderName);
   
-// ---------- Go to next step - variant A------------
+  // ---------- Go to next step - variant A------------
+  // || cardholderIsValid === false || 
 const displayError = document.querySelector(".input-error:not(.hide)"); //not=psudo-selector
 
 if (displayError === null) {
-    form.classList.remove("hide");
-    seccondStepContainer.classList.remove("hide");
+    form.classList.add("hide");
+    secondStepContainer.classList.remove("hide");
     }
 };
-// ---------- Go to next step - variant A------------
-// const displayError = document.querySelector(".input-error:not(.hide)"); //not=psudo-selector
-
-// if (displayError === null) {
-//     form.classList.remove("hide");
-//     seccondStepContainer.classList.remove("hide");
-//     }
-// };
-
+    
 form.addEventListener("submit", handleSubmit);
 
 // --------- Cardholder name input -----------
@@ -43,7 +37,8 @@ const handleCardHolderNameChange = () => {
         cardFrontName.innerText = "JANE APPLESEED";
     } else {
         cardFrontName.innerText = cardHolderNameInput.value;
-    }    
+    } 
+
     if (isSubmited === true) {
         validateName(cardHolderNameInput.value);
     }
@@ -60,10 +55,10 @@ const validateName = (name) => {
     cardholderNameError.innerText = "This field is required";
     return false;
   }
-  // 2. verificare caractere interzise (gen numere, \, ? etc)
+  // 2. verificare caractere interzise (gen numere, \, ? etc) - printr-un for
   //   "Cristian10"
   for (let i = 0; i < name.length; i++) {
-    if (forbiddenCharacters.includes(cardholderName[i])) {
+    if (forbiddenCharacters.includes(name[i])) {
       cardholderNameError.classList.remove("hide");
       cardholderNameError.innerText = "Must contain only letters";
       return false;
@@ -77,24 +72,41 @@ const validateName = (name) => {
   return true;
 };
 
+// ------- Cardholder number ---------
+const cardholderNumber = document.querySelector("#card-number");
+const cardFrontNumber = document.querySelector(".card-front-number");
+
+const handleCardHolderNumberChange = () => {
+  cardholderNumber = data.get("card-number");
+
+  if(cardholderNumber === 0) {
+    const cardFrontNumber = cardholderNumber.value.input; 
+  } else {
+    cardFrontNumber.innerText = "0000 0000 0000 0000";
+  }
+
+
+}
+
+cardholderNumber.addEventListener("input", handleCardHolderNumberChange);
+
 //  -------------- Cardholder number input ---------
 const cardNumberInput = document.querySelector("#card-number");
 
 const handleCardNumberChange = () => {
+  // sau seteaza maxlenght pe input
+  // "1234 1234 1234 12348" (lenght 20)
+  // "1234 1234 1234 1234"
+  if(cardNumberInput.length > 19) { //peste 16 cifre nu apare nimic
+      cardNumberInput.value = cardNumberInput.value.slice(0, 18);
+  }
+
     //ex: "123456789" -> "1234 5678 9"
     // pasul 1. luam valoarea inputului fara spatii
     const currentNumber = cardNumberInput.value.replaceAll(" ", ""); //preluam valoara unui input
     
-    // sau seteaza maxlenght pe input
-    // "1234 1234 1234 12348" (lenght 20)
-    // "1234 1234 1234 1234"
-    if(cardNumberInput.length > 19) { //peste 16 cifre nu apare nimic
-        cardNumberInput.value = cardNumberInput.value.slice(0, 19);
-    }
-
     // pasul 2. adaugam spatii in valoarea inputului 
-       
-    let formatedNumber = "";
+        let formatedNumber = "";
 
     for (let i = 0; i < currentNumber.length; i++) {
         if (i > 0 && i % 4 === 0) {
