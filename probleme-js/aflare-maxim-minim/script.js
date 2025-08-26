@@ -39,43 +39,98 @@
 // In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. 
 // If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. 
 // If there are no good ideas, as is often the case, return 'Fail!'.
-const goodIdeas = (ideas) => {
-    let counter = 0;
-    ideas.forEach((idea) => {
-        if (idea === "good") {
-            counter++;
-        }
-    });
+// const goodIdeas = (ideas) => {
+//     let counter = 0;
+//     ideas.forEach((idea) => {
+//         if (idea === "good") {
+//             counter++;
+//         }
+//     });
 
-    if (counter === 0) return 'Fail!';
+//     if (counter === 0) return 'Fail!';
 
-    if (counter > 1 && counter < 3) return 'Publish!';
+//     if (counter > 1 && counter < 3) return 'Publish!';
 
-    if (counter > 2) return 'I smell a series!';
-}; 
-let ideas = ['good', 'bad'];
-console.log(goodIdeas(ideas));
+//     if (counter > 2) return 'I smell a series!';
+// }; 
+// let ideas = ['good', 'bad'];
+// console.log(goodIdeas(ideas));
 
-let numbers = [1,2,4,5,6,87,12];
-let newMax = [];
-let newMin = [];
-let counter = 0;
+// let numbers = [1,2,4,5,6,87,12];
+// let newMax = [];
+// let newMin = [];
+// let counter = 0;
 
-for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > newMax) { 
-        newMax = numbers[i];
-    }
-}; 
-console.log(newMax);
+// for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > newMax) { 
+//         newMax = numbers[i];
+//     }
+// }; 
+// console.log(newMax);
 
-const newMaxs = (newMax) => {
+// const newMaxs = (newMax) => {
 
-    for (let i = 0; i < newMax.length; i++) { 
-        if (newMax > 0 ) {
-            counter++;
-        }
-    }
+//     for (let i = 0; i < newMax.length; i++) { 
+//         if (newMax > 0 ) {
+//             counter++;
+//         }
+//     }
     
-}
+// }
 
-console.log(newMaxs([1,2,4,5,6,87,12]));
+// console.log(newMaxs([1,2,4,5,6,87,12]));
+
+
+// [4, 10, 10,9] -> [10, 9]
+// [4, 9]
+// const twoHighest = (arr) => {
+//     // pasul 1. gaseste maximul din arr
+//     let max1 = arr[0];
+//     for (let i = 1; i < arr.length; i++)
+//         if(arr[i] > max1) {
+//             max1 = arr[i];
+//         }
+//     // pasul 2. elimina maximul din arr
+// const arrWithoutMax = arr.filter((number) => number !== max1); //[4, 9]
+//     // pasul 3. gaseste noul maxim din arr
+//     let max2 = arrWithoutMax[0];
+//     for (let i = 1; i < arrWithoutMax.length; i++) {
+
+//         if(arrWithoutMax[i] > max2) {
+//             max2 = arrWithoutMax[i];
+//         } 
+//     }
+//     // pasul 4. returneaza cele 2 maxime
+//     return [max1, max2];
+
+// }; console.log(twoHighest([4, 10, 10, 9]));
+
+
+const capMe = (names) => {
+  let result = [];
+  
+//   for (let i = 0; i < names.lenght - 1; i++) {
+//     const name = names[i];
+//     const formattedName = name[0].toUpperCase() + name.substring(1, name.length - 1).toLowerCase;
+// } 
+     names.forEach((name) => {
+       result.push(name[0].toUpperCase() + name.slice(1).toLowerCase());
+    }); 
+ return result;
+     
+}; console.log(capMe(['raplh', 'georgia', 'christina']));
+
+const capMe3 = (names) => names.map((name) => (name[0].toUpperCase + name.slice(1).toLowerCase));
+
+ console.log(capMe(['raplh', 'georgia', 'christina']));
+
+ const capMe1 = (names) => {
+    let newName1 = [];
+
+    for (let i = 0; i < names.length - 1; i++) {
+        const name = names[i];
+
+        const formattedName = name[0].toUpperCase + name[0].substring(1, names.length-1).toLowerCase;
+    } return formattedName;
+}; console.log(capMe(['raplh', 'georgia', 'christina']));
+ 

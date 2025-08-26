@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --white: #ffffff;
+  --black: #000000;
+  
+  --gray-500: #9699AA;
+
+  --orange-300: #FFAF7E;
+
+  --red-400: #F9818E;
+  --red-450: #E96170;
+  --red-400: #EE374A;
+
+  --purple-200: #D6D9E6;
+  --purple-400: #928CFF;
+  --purple-500: #6259FF;
+  --purple-600: #483EFF;
+
+  --blue-50: #F8F9FF;
+  --blue-100: #EFF5FF;
+  --blue-200: #BEE2FD;
+  --blue-300: #ABBCFF;
+  --blue-700: #164A8A;
+  --blue-950: #022959;
+}
+
+* {
+  font-family: Ubuntu, sans-serif;
+}
+
+body {
+  @apply bg-purple-200; 
+}
+
+/* text preset 1 */
+.title-lg {
+  font-size: 32px;
+  line-height: 120px;
+  letter-spacing: 0px;
+  font-weight: 700;
+}
+
+/* text preset 2 */
+.title-md {
+  font-size: 24px;
+  /* line-height: 120px; */
+  letter-spacing: 0px;
+  font-weight: 700;
+}
+
+/* text preset 3 */
+.body-lg-medium {
+  font-size: 16px;
+  line-height: 120px;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+
+/* text preset 3 */
+.body-lg-regular {
+  font-size: 16px;
+  line-height: 150px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+/* text preset 4 */
+.body-md-bold {
+  font-size: 14px;
+  /* line-height: 120px; */
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* text preset 4 */
+.body-md-medium {
+  font-size: 14px;
+  line-height: 150px;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+
+/* text preset 4 */
+.body-md-regular {
+  font-size: 14px;
+  /* line-height: 120px; */
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+/* text preset 5 */
+.body-sm {
+  font-size: 12px;
+  /* line-height: 120px; */
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+/* Form */
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  display: flex;
+  font-weight: 500; 
+  color: var(--blue-950);
+  margin-bottom: 8px;
+}
+
+.input {
+  border: 1px solid;
+  border-color: var(--purple-200);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  width: 100%;
+  padding-left: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--gray-500);
+}
+
+.addon-container:has(input:checked) {
+  border-color: var(--purple-600);
+  background-color: var(--blue-50);
+  
+}
+
+.button-content {
+  background-color: var(--blue-950);
+  padding: 8px 22px;
+  border: 1px solid;
+  border-radius: 4px;
+  width: 97px;
+  height: 40px;
+  color: white;
+}
+.button-no-border {
+  background-color: var(--white);
+  padding: 10px 16px;
+  /* border: 1px solid; */
+  /* border-radius: 4px; */
+  width: 97px;
+  height: 40px;
+  color: var(--gray-500);
+}

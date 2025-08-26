@@ -1,0 +1,193 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: none;
+    font-family: "League Spartan", sans-serif;
+    color: var(--neutral-0); /*vrem ca toate paragrafele sa aiba
+    culoarea alb*/
+   
+}
+
+:root{
+    --neutral-0: #FFFFFF;
+    --neutral-600: #838391;
+    --neutral-800: #38384F;
+    --neutral-1000: #070724;
+
+    --sky-400: #419EBB;
+
+    --amber-300: #EDA249;
+    --amber-600: #D14C32;
+    --amber-700: #CD5120;
+
+    --violet: #6f2ed6;
+
+    --red-500: #D83A34;
+
+    --emerald-400: #1ec2a4;
+
+    --blue-500: #2d68f0;
+} 
+
+body {
+    background-color: var(--neutral-1000);
+    background-image: url("./assets/background-stars.svg");
+}
+
+/* Comon */
+.title-xl {
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 103px;
+    text-transform: uppercase; /*transforma litere in litere mari */
+    font-family: "Antonio";
+}
+
+.title-lg {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 52px;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    font-family: "Antonio";
+    margin-bottom: 10px;
+}
+
+.title-sm {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2.6px;
+}
+
+.title-xs {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.text-md {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.section-container {
+    padding: 24px;
+}
+
+.planet-image {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
+.description-planet-container {
+    margin-bottom: 48px;
+}
+
+
+
+/* ------ Nav ------ */
+nav.section-container {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: "Antonio";
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -1.05px;
+    color: var(--neutral-0);
+}
+
+.mobile-tabs {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 24px; 
+    padding-right: 24px;
+    border-top: 1px solid var(--neutral-600);
+    border-bottom: 1px solid var(--neutral-600);
+}
+
+.mobile-tabs button {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.93px;
+    color: var(--neutral-0);
+    background: transparent;
+    text-transform: uppercase;
+    border-bottom-width: 4px;
+    border-bottom-style: solid; 
+    border-bottom-color: transparent;
+    padding-bottom: 17px;
+    padding-top: 20px;
+    opacity: 50%;
+}
+
+.mobile-tabs button.selected-tab {
+    border-bottom-color: var(--sky-400);
+    opacity: 100%;
+}
+
+.current-page-link {
+    color: red;
+}
+
+.nav-links {
+    display: none;
+}
+
+/* ---- Section ----- */
+.description-planet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:var(--neutral-0);
+    border: 1px solid;
+    padding-top: 9px;
+    padding-bottom: 13px; 
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 8px;
+}
+
+.description-planet span {
+    font-family: Antonio;
+    color: white;
+    letter-spacing: -0.75px;
+    font-size: 20px;
+    /* padding-top: 9px;
+    padding-bottom: 13px; 
+    padding-left: 24px;
+    padding-right: 24px; */
+}
+
+@media(min-width: 768px) {
+    .nav-hamburger-menu {
+        display: none;
+    }
+    .nav-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mobile-tabs {
+        display: none;
+    }
+    .nav-links {
+        display: flex;
+    }
+}

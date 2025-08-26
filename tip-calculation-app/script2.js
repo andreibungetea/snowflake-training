@@ -14,8 +14,8 @@ console.log(printArray(["h", "o", "l", "a"]));
 //     return array.join(",");
 // }; console.log(printArray2(["h", "o", "l", "a"]));
 
-//cand ai un arraw-function care doar da return de ceva, nu mai are alta linie de cod, 
-// se poate sterge retutnul si, obligatioriu, stergi si acoladele. Rezultatul este urmatorul:
-const printArray2 = (array) => array.join(",");
+// //cand ai un arraw-function care doar da return de ceva, nu mai are alta linie de cod, 
+// // se poate sterge returnul si, obligatioriu, stergi si acoladele. Rezultatul este urmatorul:
+// const printArray3 = (array) => array.join(",");
 
-console.log(printArray2(["h", "o", "l", "a"]));
+// console.log(printArray2(["h", "o", "l", "a"]));

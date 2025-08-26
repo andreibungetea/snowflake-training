@@ -1,0 +1,19 @@
+Pasi creare aplicatie in React:
+
+Deschide VS Code-ul in folderul mare snowflake-trainig
+Creaza folderul react daca nu este deja creat
+Deschizi terminalul din VS Code (nu uita sa alegi optiunea Comand Prompt)
+cd react
+npm create vite@latest first-react-app -- --template react
+cd first-react-app
+npm instal (scurtatura: nmp i)
+npm run dev
+
+Pasi redeschidere aplicatie in React:
+
+Deschide VS Code-ul in folderul mare snowflake-trainig
+Selectezi folderul React
+Deschizi terminalul din VS Code (nu uita sa alegi optiunea Comand Prompt)
+cd react
+cd nume aplicatie pe care vrei sa o deschizi
+npm run dev

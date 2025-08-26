@@ -10,7 +10,8 @@ const handleAddNewTodo = (e) => {
 
     const data = new FormData(e.target); //luam datele din formular
 
-    //  ------ Todo's list ----------   evidenta de todo si cu id
+    //  ------ Todo's list ----------   
+    // evidenta de todo si cu id
     currentId++;
     todos.push({
         id: currentId,
@@ -38,7 +39,9 @@ const handleAddNewTodo = (e) => {
 
     // Marked as completed
     const markButoon = newTodo.querySelector(".mark-todo-as-completed");
+
     const handleMarkTodo = (e) => {
+
     const id = Number(newTodo.getAttribute("data-id"));//in functia de marcare avem acces la id
     const indexOfCurrentTodo = todos.findIndex((todo) => todo.id === id);
 
@@ -49,7 +52,7 @@ const handleAddNewTodo = (e) => {
     }
     newTodo.classList.toggle("completed");
 
-    updateOfNumberItemsLeft ();
+    updateOfNumberItemsLeft();
 };
 
 markButoon.addEventListener("click", handleMarkTodo);
@@ -74,7 +77,7 @@ markButoon.addEventListener("click", handleMarkTodo);
     console.log(todos);
 
     // Update number of items
-    updateOfNumberItemsLeft ();
+    updateOfNumberItemsLeft();
 };
 
 form.addEventListener("submit", handleAddNewTodo);

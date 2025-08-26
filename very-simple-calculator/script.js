@@ -12,7 +12,7 @@ const handleSubmit = (e) => {
 
     validateFirstNumber(); //apelam f si nu mai scriem tot codul: "Don't repeat your self"
     validateOperator();
-    validateSeccondNumber();
+    validateSecondNumber();
     
     const calculatorFormError = document.querySelector(
         ".calculator-form-error:not(.hide)"
@@ -22,19 +22,19 @@ const handleSubmit = (e) => {
     const data = new FormData(form); //extragem datele din formular
 
     const firstNumber = Number(data.get("first-number")); //"3"-convertim data.get la number
-    const seccondNumber = Number(data.get("second-number"));//"5"-convertim data.get la number
+    const secondNumber = Number(data.get("second-number"));//"5"-convertim data.get la number
     const operator = data.get("operator");
 
     let result;
 
     if (operator === "+") {
-        result = firstNumber + seccondNumber; //"3"+"5"="35" - cand js vede 2 "" le ueste. converite la Number => 8
+        result = firstNumber + secondNumber; //"3"+"5"="35" - cand js vede 2 "" le ueste. converite la Number => 8
     } else if (operator === "-") {
-        result = firstNumber - seccondNumber;
+        result = firstNumber - secondNumber;
     } else if (operator === "*") {
-        result = firstNumber * seccondNumber;
+        result = firstNumber * secondNumber;
     } else if (operator === "/") {
-        result = firstNumber / seccondNumber;
+        result = firstNumber / secondNumber;
     }
 
     formResult.innerText = result;
@@ -70,26 +70,26 @@ const validateFirstNumber = () => {
 };
 
 // ---- Second number error----
-const seccondNumberError = document.querySelector(".second-number-error");
-const seccondNumberInput = document.querySelector("#second-number");
+const secondNumberError = document.querySelector(".second-number-error");
+const secondNumberInput = document.querySelector("#second-number");
 
-const handleseccondNumberInputChange = () => {
+const handleSecondNumberInputChange = () => {
     if (isSubmitted === true) {
-        validateSeccondNumber();
+        validateSecondNumber();
     }
 };
 
-seccondNumberInput.addEventListener("input", handleseccondNumberInputChange);
+secondNumberInput.addEventListener("input", handleSecondNumberInputChange);
 
-const validateSeccondNumber = () => {
+const validateSecondNumber = () => {
     const data = new FormData(form);
     
-    const seccondNumber = data.get("second-number");
+    const secondNumber = data.get("second-number");
     
-    if(seccondNumber.length === 0) {
-        seccondNumberError.classList.remove("hide");
+    if(secondNumber.length === 0) {
+        secondNumberError.classList.remove("hide");
     } else {
-        seccondNumberError.classList.add("hide");
+        secondNumberError.classList.add("hide");
     }
 };
 
@@ -111,12 +111,12 @@ const resetButton = document.querySelector(".reset-button");
 
 const handleResetButton = () => {
     const resetFirstNumber = document.querySelector("#first-number");
-    const resetSeccondNumber = document.querySelector("#second-number");
+    const resetSecondNumber = document.querySelector("#second-number");
     const resetOperator = document.querySelector("#operator");
     const resetResultContent = document.querySelector(".result-content");
 
     resetFirstNumber.value = "";
-    resetSeccondNumber.value = "";
+    resetSecondNumber.value = "";
     resetOperator.value = "";
     resetResultContent.value = "-";
 
@@ -124,7 +124,7 @@ const handleResetButton = () => {
     // formResult.innerHTML = "-";
 
     firstNumberError.classList.add("hide");
-    seccondNumberError.classList.add("hide");
+    secondNumberError.classList.add("hide");
     operatorError.classList.add("hide");
 
     isSubmitted === false;

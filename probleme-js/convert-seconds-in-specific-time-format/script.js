@@ -44,39 +44,53 @@
 
 // Exercitiul 2: 8400 -> 2:20:00
 
-const convertSecondsInSpecificTimeFormat = (totalNumberOfSeconds) => {
+// const convertSecondsInSpecificTimeFormat = (totalNumberOfSeconds) => {
 
-    // 1. aflam numarul de ore
-    const hours = Math.floor(totalNumberOfSeconds / 3600); // 2.33
-    // 2.aflam numarul de minute
-    const minutes = Math.floor(totalNumberOfSeconds - hours * 3600) / 60; // 20
-    // 3. aflam numarul de secunde
-    const seconds = totalNumberOfSeconds - hours * 3600 - minutes * 60; // 00
+//     // 1. aflam numarul de ore
+//     const hours = Math.floor(totalNumberOfSeconds / 3600); // 2.33
+//     // 2.aflam numarul de minute
+//     const minutes = Math.floor(totalNumberOfSeconds - hours * 3600) / 60; // 20
+//     // 3. aflam numarul de secunde
+//     const seconds = totalNumberOfSeconds - hours * 3600 - minutes * 60; // 00
 
-    // scriem un cod in care sa se afiseze si 0 inainte daca orele, minutele sau secundele sunt mai mici de 10
-    // 1. turney operators
-    const totalHours = hours < 10 ? "0" + hours : hours;
-    const totalMinutes = minutes < 10 ? "0" + minutes : minutes;
-    const totalSeconds = seconds < 10 ? "0" + seconds : seconds;
+//     // scriem un cod in care sa se afiseze si 0 inainte daca orele, minutele sau secundele sunt mai mici de 10
+//     // 1. turney operators
+//     const totalHours = hours < 10 ? "0" + hours : hours;
+//     const totalMinutes = minutes < 10 ? "0" + minutes : minutes;
+//     const totalSeconds = seconds < 10 ? "0" + seconds : seconds;
 
-    // 2. if/else
-    if (totalHours < 10) {
-        totalHours = "0" + hours;
-    } else {
-        totalHours = hours;
-    }
-    if (totalMinutes < 10) {
-        totalMinutes = "0" + minutes;
-    } else {
-        totalMinutes = minutes;
-    }
-    if (totalSeconds < 10) {
-        totalSeconds = "0" + seconds;
-    } else {
-        totalSeconds = seconds;
-    }
+//     // 2. if/else
+//     if (totalHours < 10) {
+//         totalHours = "0" + hours;
+//     } else {
+//         totalHours = hours;
+//     }
+//     if (totalMinutes < 10) {
+//         totalMinutes = "0" + minutes;
+//     } else {
+//         totalMinutes = minutes;
+//     }
+//     if (totalSeconds < 10) {
+//         totalSeconds = "0" + seconds;
+//     } else {
+//         totalSeconds = seconds;
+//     }
 
 
-    return `${totalHours}:${totalMinutes}:${totalSeconds}`;
-}; 
- convertSecondsInSpecificTimeFormat(8400);
+//     return `${totalHours}:${totalMinutes}:${totalSeconds}`;
+// }; 
+//  convertSecondsInSpecificTimeFormat(8400);
+
+ const specificSecondsInTimeFormat = (totalNumberOfSeconds) => {
+        //24422 -> 06:47:02
+        const hours = Math.floor(totalNumberOfSeconds / 3600); //2.33 -> 2
+        const minutes = Math.floor((totalNumberOfSeconds - hours * 3600) / 60); //20 -> 20
+        const seconds = totalNumberOfSeconds - hours * 3600 - minutes * 60; //00
+
+        const totalHours = hours < 10 ? "0" + hours : hours;
+        const totalMinutes = minutes < 10 ? "0" + minutes : minutes;
+        const totalSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+        return `${totalHours}:${totalMinutes}:${totalSeconds}`;
+};
+console.log(specificSecondsInTimeFormat(24422));

@@ -5,20 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDoApp</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <form class="add-new-todo-form">
-      <input type="text" placeholder="Create a new todo..." name="new-todo" />
-      <button type="submit">Add</button>
-    </form>
-    <div class="todos-container"></div>
-    <div>
-      <p><span class="number-of-items-left">0</span> items left</p>
+    <img class="background-mobile-dark" src="./assets/bg-mobile-light.jpg" />
+    <div class="header">
+      <h1 class="title">T O D O</h1>
+      <img class="hide" src="./assets/icon-sun.svg" />
+      <img class="icon-moon" src="./assets/icon-moon.svg" />
     </div>
-    <div>
-      <button value="all" class="filter-button selected-filter">All</button>
-      <button value="active" class="filter-button">Active</button>
-      <button value="completed" class="filter-button">Completed</button>
+    <div class="todo-form-container">
+      <form class="add-new-todo-form">
+        <input type="text" placeholder="Create a new todo..." name="new-todo" />
+        <button type="submit">Add</button>
+      </form>
+      <div class="todos-container"></div>
+      <div>
+        <p class="button-appearance">
+          <span class="number-of-items-left">0</span> items left
+        </p>
+      </div>
+      <div class="buttons">
+        <button
+          value="all"
+          class="button-appearance filter-button selected-filter"
+        >
+          All
+        </button>
+        <button value="active" class="button-appearance filter-button">
+          Active
+        </button>
+        <button value="completed" class="button-appearance filter-button">
+          Completed
+        </button>
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>

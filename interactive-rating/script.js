@@ -3,8 +3,7 @@ const buttonOne = document.querySelector(".rating-button-one");
 
 // 1. User-ul face click pe buton
 // 2. din JS adaugam pe buton clasa selected-rating
-// 3. din CSS adaugam automat pe button proprietatile clasei
-// selected-rating
+// 3. din CSS adaugam automat pe buton proprietatile clasei selected-rating
 
 const handleButtonOneClick = () => {
   // 1. gaseste butonul care este acum selectat

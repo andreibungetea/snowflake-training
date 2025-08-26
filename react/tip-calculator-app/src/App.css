@@ -1,0 +1,104 @@
+
+/* 
+
+-> Breakpoints
+640px
+768px
+1024px
+1280px
+1536px
+
+-> Font weights
+700
+
+*/
+
+* {
+   
+    font-family: "Space Mono";
+}
+
+:root {
+    --green-400: hsl(172, 67%, 45%); /* #26C2AE */
+    --green-900: hsl(183, 100%, 15%); /*  */
+    
+    --grey-50: hsl(189, 47%, 97%); /* #F3F9FA */
+    --grey-200: hsl(185, 41%, 84%); /*  */
+    --grey-400: hsl(184, 14%, 56%); /*  */
+    --grey-500: hsl(186, 14%, 43%); /*  */
+    --grey-900: hsl(183, 100%, 15%); /* #00474B */
+
+    --white: hsl(0, 100%, 100%);
+
+    --orange-400: #E17052;
+}
+
+body {
+    background-color: var(--grey-200);
+}
+
+/* --- Common --- */
+.label-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.standard-label {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-500);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.standard-input {
+    background-color: var(--grey-50);
+    color: var(--green-900);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 18px;
+    padding-left: 18px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.standard-input:focus {
+    border: 2px solid var(--green-400);
+    outline: none;
+}
+
+.input-container {
+    position: relative;
+}
+
+.left-side-icon {
+    position: absolute;
+    left: 18px;
+    top: 16px;
+}
+
+.with-left-side-icon {
+    padding-left: 48px;
+}
+
+.standard-input-error {
+    color: var(--orange-400);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.hide {
+    display: none;
+}
+
+/* --- Calculator Form --- */
+.selected-tip {
+    background-color: var(--green-900);
+    color: var(--green-400);
+}
