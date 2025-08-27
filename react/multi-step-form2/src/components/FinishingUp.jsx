@@ -1,13 +1,18 @@
 import { plans } from "./plans";
 
-const FinishingUp = ({ selectedPlan, showYearlyPrices }) => {
-  const handleSubmit = (e) => {
-    e.preventDafault();
+const FinishingUp = ({
+  selectedPlan,
+  showYearlyPrices,
+  handleNavigateForword,
+}) => {
+  const planData = plans.find((plan) => plan.id !== selectedPlan);
+  // const handleSubmit = (e) => {
+  //   e.preventDafault();
 
-    cpn;
+  //   const data = new FormData(data.get);
 
-    const data = new FormData(data.get);
-  };
+  //   handleNavigateForword();
+  // };
 
   return (
     <div className="bg-white mr-4 ml-4 px-6 py-8 mb-6 absolute rounded-lg shadow-md">
@@ -15,11 +20,14 @@ const FinishingUp = ({ selectedPlan, showYearlyPrices }) => {
       <p className="text-gray-500 mb-6">
         Double-check everything looks OK before confirming.
       </p>
-      <form onClick={handleSubmit}>
-        <div className="bg-blue-50 rounded-lg px-4 py-4 mb-4px">
+      <form /*onClick={handleSubmit}*/ id="finishingp-form">
+        <div className="bg-blue-50 rounded-lg p-6 mb-4px">
           <div className="flex justify-between text-gray-500 flex justify-between items-center">
+            selectedPlan={selectedPlan}
+            showYearlyPrices={showYearlyPrices}
             <p className="border-b border-b-full border-b-gray-500 pb-4 mb-4">
-              Arcade ({showYearlyPrices === true ? "Yearly" : "Monthly"})
+              {planData.name} (
+              {showYearlyPrices === true ? "Yearly" : "Monthly"})
             </p>
           </div>
           <p className="text-gray-500 mt-4 mb-4">Arcade service</p>

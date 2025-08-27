@@ -1,14 +1,17 @@
 import { useState } from "react";
+import Stepper from "./components/Stepper";
+import UserInfo from "./components/UserInfo";
+import PlanSelection from "./components/PlanSelection";
 import AddOnsSelection from "./components/AddOnsSelection";
 import FinishingUp from "./components/FinishingUp";
-import PlanSelection from "./components/PlanSelection";
-import Stepper from "./components/Stepper";
 import ThankYou from "./components/ThankYou";
-import UserInfo from "./components/UserInfo";
 
 const App = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [showYearlyPrices, setShowYearlyPrices] = useState(true);
+  const [selectedPlan, setSelectedPlan] = useState("arcade");
+  const [selectAddons, setSelectAddons] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); //spinner
 
   const handleNavigateBack = () => {
     setCurrentStep(currentStep - 1);
@@ -16,6 +19,7 @@ const App = () => {
 
   const handleNavigateForword = () => {
     setCurrentStep(currentStep + 1);
+    setIsLoading(false);
   };
 
   return (
@@ -44,6 +48,9 @@ const App = () => {
               <PlanSelection
                 showYearlyPrices={showYearlyPrices}
                 setShowYearlyPrices={setShowYearlyPrices}
+                handleNavigateForword={handleNavigateForword}
+                selectedPlan={selectedPlan}
+                setSelectedPlan={setSelectedPlan}
               />
               <div className="bg-white p-4 flex justify-between items-center fixed bottom-0 w-full">
                 <button
@@ -54,16 +61,23 @@ const App = () => {
                 </button>
                 <button
                   onClick={handleNavigateForword}
+                  form="plan-selection-form"
                   className="button-content"
                 >
-                  Next
+                  Next Step
                 </button>
               </div>
             </>
           ) : null}
           {currentStep === 3 ? (
             <>
-              <AddOnsSelection />
+              <AddOnsSelection
+                showYearlyPrices={showYearlyPrices}
+                setShowYearlyPrices={setShowYearlyPrices}
+                selectAddons={selectAddons}
+                setSelectAddons={setSelectAddons}
+                handleNavigateForword={handleNavigateForword}
+              />
               <div className="bg-white p-4 flex justify-between items-center fixed bottom-0 w-full">
                 <button
                   onClick={handleNavigateBack}
@@ -72,17 +86,22 @@ const App = () => {
                   Go back
                 </button>
                 <button
-                  onClick={handleNavigateForword}
                   className="button-content"
+                  form="addon-selection-form"
+                  disabled={isLoading === true}
                 >
-                  Next
+                  {isLoading === true ? <div className="spinner"></div> : null}
+                  Next Step
                 </button>
               </div>
             </>
           ) : null}
           {currentStep === 4 ? (
             <>
-              <FinishingUp />
+              <FinishingUp
+                selectedPlan={selectedPlan}
+                showYearlyPrices={showYearlyPrices}
+              />
               <div className="bg-white p-4 flex justify-between items-center fixed bottom-0 w-full">
                 <button
                   onClick={handleNavigateBack}
@@ -91,7 +110,8 @@ const App = () => {
                   Go back
                 </button>
                 <button
-                  onClick={handleNavigateForword}
+                  // onClick={handleNavigateForword}
+                  form="finishingp-form"
                   className="button-content"
                 >
                   Confirm

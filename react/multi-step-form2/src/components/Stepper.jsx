@@ -13,10 +13,7 @@ import steps from "./steps";
 
 const Stepper = ({ currentStep }) => {
   return (
-    <div className="h-43 bg-no-repeat bg-cover 
-    bg-[url(/src/assets/bg-sidebar-mobile.svg)] 
-    md:bg-[url(/src/assets/bg-sidebar-desktop.svg)] 
-    md:min-h-150 md:w-1/3 md:rounded-xl">
+    <div className="h-43 bg-[url(./src/assets/images/bg-sidebar-mobile.svg)] bg-cover bg-no-repeat md:h-screen md:bg-[url(./src/assets/images/bg-sidebar-desktop.svg)] md:rounded-xl md:bg-cover md:relative md:w-[40%] md:p-8h-43 bg-no-repeat bg-cover bg-[url(/src/assets/bg-sidebar-mobile.svg)] md:bg-[url(/src/assets/bg-sidebar-desktop.svg)] md:min-h-150 md:w-1/3 md:rounded-xl">
       <div className="flex gap-4 justify-center pt-8">
         {/* --- Randare dinamica --- */}
         {steps.map((step) => (

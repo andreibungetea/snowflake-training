@@ -6,10 +6,17 @@ import { plans } from "./plans";
 // 2. daca dau click pe butonul "Advanced" vreau sa actualizez variabila de state selectedPlan a.i. sa fie egala cu "advanced"
 // 3. daca dau click pe butonul "Pro" vreau sa actualizez variabila de state selectedPlan a.i. sa fie egala cu "pro"
 
-const PlanSelection = ({ showYearlyPrices, setShowYearlyPrices }) => {
+const PlanSelection = ({
+  showYearlyPrices,
+  setShowYearlyPrices,
+  selectedPlan,
+  setSelectedPlan,
+  handleNavigateForword,
+}) => {
   const handleChangeShownPrices = () => {
     const newValue = !showYearlyPrices;
     setShowYearlyPrices(newValue);
+    handleNavigateForword();
   };
 
   return (
@@ -18,21 +25,27 @@ const PlanSelection = ({ showYearlyPrices, setShowYearlyPrices }) => {
       <p className="text-gray-500 mb-6">
         You have the option of monthly or yearly billing.
       </p>
-      {plans.map((plan) => (
-        <PlanCard plan={plan} showYearlyPrices={showYearlyPrices} />
-      ))}
-
-      <div className="flex gap-6 justify-center items-center">
-        <p>Monthly</p>
-        <input
-          type="checkbox"
-          name=""
-          id=""
-          checked={showYearlyPrices}
-          onChange={handleChangeShownPrices}
-        />
-        <p>Yearly</p>
-      </div>
+      <form id="plan-selection-form" className="text-left text-extrabold">
+        {plans.map((plan) => (
+          <PlanCard
+            plan={plan}
+            showYearlyPrices={showYearlyPrices}
+            selectedPlan={selectedPlan}
+            setSelectedPlan={setSelectedPlan}
+          />
+        ))}
+        <div className="flex gap-6 justify-center items-center">
+          <p>Monthly</p>
+          <input
+            type="checkbox"
+            name=""
+            id=""
+            checked={showYearlyPrices}
+            onChange={handleChangeShownPrices}
+          />
+          <p>Yearly</p>
+        </div>
+      </form>
     </div>
   );
 };

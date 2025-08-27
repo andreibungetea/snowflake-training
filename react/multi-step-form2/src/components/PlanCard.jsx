@@ -1,21 +1,21 @@
-import { useState } from "react";
-
 const PlanCard = ({
   plan: { id, icon, name, yearlyPrice, monthlyPrice, numberOfFreeMonths },
   showYearlyPrices,
+  selectedPlan,
+  setSelectedPlan,
 }) => {
-  const [selectedPlan, setSelectedPlan] = useState("arcade");
-
-  const handleChangeSelectedPlan = (newPlan) => {
-    setSelectedPlan(newPlan);
+  const handleChangeSelectedPlan = () => {
+    setSelectedPlan(id);
   };
 
   return (
     <button
-      onClick={() => handleChangeSelectedPlan(id)}
+      // onClick={() => handleChangeSelectedPlan(id)}
+      onClick={handleChangeSelectedPlan}
       className={`flex gap-4 border mb-2 w-full rounded-lg p-4 ${
         id === selectedPlan ? "border-purple-600" : "border-purple-200"
-      }`}>
+      }`}
+    >
       <img src={icon} />
       <div>
         <h4>{name}</h4>
